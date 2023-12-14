@@ -12,7 +12,7 @@ class TuringMachine:
         self.symbols_counter = []
 
     def step(self):
-        if self.head < 0 or self.head >= len(self.head):
+        if self.head < 0 or self.head >= len(self.tape):
             current_symbol = "Λ"
         else:
             current_symbol = self.tape[self.head]
