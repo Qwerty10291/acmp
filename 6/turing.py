@@ -12,7 +12,10 @@ class TuringMachine:
         self.symbols_counter = []
 
     def step(self):
-        current_symbol = self.tape[self.head]
+        if self.head < 0 or self.head >= len(self.head):
+            current_symbol = "Λ"
+        else:
+            current_symbol = self.tape[self.head]
         if (self.state, current_symbol) in self.transitions:
             if self.state == "q2" and current_symbol == "0":
                 self.j_counter  += 1
